@@ -21,7 +21,7 @@ import modelo.tdas.DisorderedST;
  * utiliza una tabla de símbolos desordenada (DisorderedST) para gestionar las
  * palabras.
  */
-public class BibliaDesordenada {
+public class BibliaNoOrdenada {
     /**
      * Tabla de símbolos desordenada que mapea palabras a sus frecuencias.
      */
@@ -34,7 +34,7 @@ public class BibliaDesordenada {
      * 
      * @throws IOException Si ocurre un error al leer las palabras del archivo.
      */
-    public BibliaDesordenada() throws IOException {
+    public BibliaNoOrdenada() throws IOException {
         palabrasDesordenadas = new DisorderedST<>();
     }
 

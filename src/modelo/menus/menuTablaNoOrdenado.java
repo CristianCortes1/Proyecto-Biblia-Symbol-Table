@@ -3,7 +3,7 @@ package modelo.menus;
 import java.io.IOException;
 import java.util.Scanner;
 
-import modelo.mundo.BibliaDesordenada;
+import modelo.mundo.BibliaNoOrdenada;
 
 /**
  * @author Cristian Cortes
@@ -26,12 +26,12 @@ import modelo.mundo.BibliaDesordenada;
  * como obtener la palabra con mayor frecuencia, o mostrar la frecuencia de una
  * palabra específica.
  */
-public class menuTablaDesordenado {
+public class menuTablaNoOrdenado {
 
     /**
      * Objeto que representa la Biblia usando una tabla desordenada.
      */
-    private BibliaDesordenada biblia;
+    private BibliaNoOrdenada biblia;
 
     /**
      * Objeto Scanner para la captura de entrada del usuario.
@@ -51,8 +51,8 @@ public class menuTablaDesordenado {
      * @throws IOException Si ocurre un error al cargar las palabras desde el
      *                     archivo.
      */
-    public menuTablaDesordenado(Scanner sc) throws IOException {
-        biblia = new BibliaDesordenada();
+    public menuTablaNoOrdenado(Scanner sc) throws IOException {
+        biblia = new BibliaNoOrdenada();
         this.sc = sc;
     }
 

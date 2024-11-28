@@ -3,9 +3,12 @@ package main;
 import java.io.IOException;
 import java.util.Scanner;
 
-import modelo.menus.menuTablaDesordenado;
+import controler.Controler;
+import modelo.menus.menuTablaNoOrdenado;
 import modelo.menus.menuTablaOrdenada;
-
+import modelo.mundo.BibliaNoOrdenada;
+import modelo.mundo.BibliaOrdenada;
+import view.*;
 /**
  * @author Cristian Cortes
  * @author David Chacon
@@ -37,7 +40,7 @@ public class ProyectBiblia {
     /**
      * Objeto que maneja el menú de operaciones para la tabla desordenada.
      */
-    private menuTablaDesordenado menuDesordenado;
+    private menuTablaNoOrdenado menuDesordenado;
 
     /**
      * Objeto que maneja el menú de operaciones para la tabla ordenada.
@@ -52,7 +55,7 @@ public class ProyectBiblia {
      */
     public ProyectBiblia() throws IOException {
         sc = new Scanner(System.in);
-        menuDesordenado = new menuTablaDesordenado(sc);
+        menuDesordenado = new menuTablaNoOrdenado(sc);
         menuOrdenado = new menuTablaOrdenada(sc);
     }
 
@@ -69,6 +72,10 @@ public class ProyectBiblia {
      * @throws IOException Si ocurre un error al cargar las palabras de la Biblia.
      */
     public static void main(String[] args) throws IOException {
+        VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
+        BibliaNoOrdenada bibliaNoOrdenada = new BibliaNoOrdenada();
+        BibliaOrdenada bibliaOrdenada = new BibliaOrdenada();
+        Controler controler = new Controler(ventanaPrincipal, bibliaNoOrdenada, bibliaOrdenada);
         ProyectBiblia main = new ProyectBiblia();
         main.menuTerminal(main);
         
