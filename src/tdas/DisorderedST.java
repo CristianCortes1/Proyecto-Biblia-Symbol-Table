@@ -23,7 +23,8 @@ public class DisorderedST<Key extends Comparable<Key>, Value> extends ST<Key, Va
     }
 
     /**
-     * Inserta un par clave-valor en la tabla. Si el valor es {@code null}, elimina la clave.
+     * Inserta un par clave-valor en la tabla. Si el valor es {@code null}, elimina
+     * la clave.
      * Si la clave ya existe, actualiza su valor.
      *
      * @param key la clave a insertar o actualizar
@@ -79,7 +80,8 @@ public class DisorderedST<Key extends Comparable<Key>, Value> extends ST<Key, Va
     @Override
     public void delete(Key key) {
         int index = indexOf(key);
-        if (index == -1) return;
+        if (index == -1)
+            return;
 
         keys[index] = keys[count - 1];
         values[index] = values[count - 1];
@@ -87,14 +89,16 @@ public class DisorderedST<Key extends Comparable<Key>, Value> extends ST<Key, Va
         values[count - 1] = null;
         count--;
 
-        if (count > 0 && count == keys.length / 4) resize(keys.length / 2);
+        if (count > 0 && count == keys.length / 4)
+            resize(keys.length / 2);
     }
 
     /**
      * Verifica si una clave está presente en la tabla.
      *
      * @param key la clave a verificar
-     * @return {@code true} si la clave está presente, {@code false} en caso contrario
+     * @return {@code true} si la clave está presente, {@code false} en caso
+     *         contrario
      */
     @Override
     public boolean contains(Key key) {

@@ -42,7 +42,8 @@ public abstract class ST<Key extends Comparable<Key>, Value> {
     }
 
     /**
-     * Cambia el tamaño de los arreglos subyacentes para ajustarse a una nueva capacidad.
+     * Cambia el tamaño de los arreglos subyacentes para ajustarse a una nueva
+     * capacidad.
      * 
      * @param capacity el nuevo tamaño de los arreglos
      */
@@ -59,7 +60,7 @@ public abstract class ST<Key extends Comparable<Key>, Value> {
     }
 
     /**
-     * Inserta un par clave-valor en la tabla. 
+     * Inserta un par clave-valor en la tabla.
      * Si el valor es {@code null}, elimina la clave de la tabla.
      * 
      * @param key la clave a insertar o actualizar
@@ -89,7 +90,8 @@ public abstract class ST<Key extends Comparable<Key>, Value> {
      * Verifica si una clave está presente en la tabla.
      * 
      * @param key la clave a buscar
-     * @return {@code true} si la clave está presente, {@code false} en caso contrario
+     * @return {@code true} si la clave está presente, {@code false} en caso
+     *         contrario
      * @throws IllegalArgumentException si la clave es {@code null}
      */
     public abstract boolean contains(Key key);

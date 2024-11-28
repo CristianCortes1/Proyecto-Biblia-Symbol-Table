@@ -12,13 +12,18 @@ import mundoOrdenado.BibliaDesordenada;
  */
 
 /**
- * Esta clase implementa un menú interactivo para gestionar y consultar estadísticas
- * de una Biblia organizada en una tabla desordenada. El menú permite al usuario realizar
- * diversas operaciones, como obtener el número total de palabras, las palabras únicas,
+ * Esta clase implementa un menú interactivo para gestionar y consultar
+ * estadísticas
+ * de una Biblia organizada en una tabla desordenada. El menú permite al usuario
+ * realizar
+ * diversas operaciones, como obtener el número total de palabras, las palabras
+ * únicas,
  * la frecuencia de palabras, entre otras opciones.
  * 
- * El usuario puede interactuar con la Biblia desordenada a través de diversas consultas,
- * como obtener la palabra con mayor frecuencia, o mostrar la frecuencia de una palabra específica.
+ * El usuario puede interactuar con la Biblia desordenada a través de diversas
+ * consultas,
+ * como obtener la palabra con mayor frecuencia, o mostrar la frecuencia de una
+ * palabra específica.
  */
 public class menuTablaDesordenado {
 
@@ -38,10 +43,12 @@ public class menuTablaDesordenado {
     private boolean llenado = false;
 
     /**
-     * Constructor de la clase. Inicializa la Biblia y el Scanner para la entrada de datos.
+     * Constructor de la clase. Inicializa la Biblia y el Scanner para la entrada de
+     * datos.
      * 
      * @param sc Scanner para la entrada del usuario.
-     * @throws IOException Si ocurre un error al cargar las palabras desde el archivo.
+     * @throws IOException Si ocurre un error al cargar las palabras desde el
+     *                     archivo.
      */
     public menuTablaDesordenado(Scanner sc) throws IOException {
         biblia = new BibliaDesordenada();
@@ -63,7 +70,8 @@ public class menuTablaDesordenado {
     }
 
     /**
-     * Muestra la palabra que tiene la mayor frecuencia de aparición, junto con el número de veces
+     * Muestra la palabra que tiene la mayor frecuencia de aparición, junto con el
+     * número de veces
      * que aparece en el texto.
      */
     public void mostrarLaMayorFrecuencia() {
@@ -79,7 +87,8 @@ public class menuTablaDesordenado {
     }
 
     /**
-     * Solicita al usuario una palabra y muestra cuántas veces aparece en el texto de la Biblia.
+     * Solicita al usuario una palabra y muestra cuántas veces aparece en el texto
+     * de la Biblia.
      */
     public void mostrarFrecuenciaDeUnaPalabra() {
         System.out.println("Escriba la palabra a buscar: ");
@@ -103,9 +112,10 @@ public class menuTablaDesordenado {
      * Muestra el menú de operaciones disponibles que el usuario puede elegir.
      * Incluye opciones para mostrar estadísticas y realizar búsquedas de palabras
      * según diferentes criterios (frecuencia, palabras únicas, etc.).
-          * @throws IOException 
-          */
-         public void conTablaDesordenada() throws IOException {
+     * 
+     * @throws IOException
+     */
+    public void conTablaDesordenada() throws IOException {
 
         if (!llenado) {
             biblia.llenarDisorderedST();
@@ -122,8 +132,7 @@ public class menuTablaDesordenado {
                     + "\n5. Mostrar la frecuencia de una palabra."
                     + "\n6. Mostrar la frecuencia de cada palabra."
                     + "\n7. Volver."
-                    + "\n8. Salir."
-            );
+                    + "\n8. Salir.");
             opcion = sc.nextInt();
 
             switch (opcion) {

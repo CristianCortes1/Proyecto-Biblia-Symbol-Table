@@ -23,7 +23,8 @@ public class OrderedST<Key extends Comparable<Key>, Value> extends ST<Key, Value
     }
 
     /**
-     * Inserta un par clave-valor en la tabla. Si el valor es {@code null}, elimina la clave.
+     * Inserta un par clave-valor en la tabla. Si el valor es {@code null}, elimina
+     * la clave.
      * Si la clave ya existe, actualiza su valor.
      *
      * @param key la clave a insertar o actualizar
@@ -107,7 +108,8 @@ public class OrderedST<Key extends Comparable<Key>, Value> extends ST<Key, Value
      * Verifica si una clave está en la tabla.
      *
      * @param key la clave a verificar
-     * @return {@code true} si la clave está presente, {@code false} en caso contrario
+     * @return {@code true} si la clave está presente, {@code false} en caso
+     *         contrario
      * @throws IllegalArgumentException si la clave es {@code null}
      */
     @Override
@@ -148,7 +150,8 @@ public class OrderedST<Key extends Comparable<Key>, Value> extends ST<Key, Value
      * Obtiene la clave más grande menor o igual a la clave dada.
      *
      * @param key la clave de referencia
-     * @return la clave más grande menor o igual a {@code key}, o {@code null} si no existe
+     * @return la clave más grande menor o igual a {@code key}, o {@code null} si no
+     *         existe
      * @throws IllegalArgumentException si la clave es {@code null}
      */
     public Key floor(Key key) {
@@ -169,7 +172,8 @@ public class OrderedST<Key extends Comparable<Key>, Value> extends ST<Key, Value
      * Obtiene la clave más pequeña mayor o igual a la clave dada.
      *
      * @param key la clave de referencia
-     * @return la clave más pequeña mayor o igual a {@code key}, o {@code null} si no existe
+     * @return la clave más pequeña mayor o igual a {@code key}, o {@code null} si
+     *         no existe
      * @throws IllegalArgumentException si la clave es {@code null}
      */
     public Key ceiling(Key key) {

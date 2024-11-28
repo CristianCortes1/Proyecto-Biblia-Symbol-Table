@@ -10,9 +10,11 @@ import java.util.NoSuchElementException;
  * @author Moiguel Ardila
  */
 /**
- * Esta clase implementa una cola FIFO (First-In-First-Out) usando una lista enlazada simple.
+ * Esta clase implementa una cola FIFO (First-In-First-Out) usando una lista
+ * enlazada simple.
  * 
- * En una cola FIFO, el primer elemento agregado (enqueue) es el primero en ser eliminado (dequeue).
+ * En una cola FIFO, el primer elemento agregado (enqueue) es el primero en ser
+ * eliminado (dequeue).
  *
  * @author (desconocido)
  * @param <Item> El tipo de elemento que se almacena en la cola.
@@ -71,14 +73,15 @@ public class Queue<Item> implements Iterable<Item> {
         if (isEmpty()) {
             first = last;
         } else {
-            oldLast.next=last;
+            oldLast.next = last;
 
         }
         count++;
     }
 
     /**
-     * Elimina y devuelve el elemento frontal de la cola (el primer elemento agregado).
+     * Elimina y devuelve el elemento frontal de la cola (el primer elemento
+     * agregado).
      * 
      * @return el elemento eliminado de la cola.
      * @throws NoSuchElementException Si la cola está vacía.
@@ -98,7 +101,8 @@ public class Queue<Item> implements Iterable<Item> {
     }
 
     /**
-     * Devuelve el elemento frontal de la cola (el primer elemento agregado) sin eliminarlo.
+     * Devuelve el elemento frontal de la cola (el primer elemento agregado) sin
+     * eliminarlo.
      * 
      * @return el elemento frontal de la cola.
      * @throws NoSuchElementException Si la cola está vacía.
@@ -111,14 +115,15 @@ public class Queue<Item> implements Iterable<Item> {
     }
 
     /**
-     * Devuelve el elemento final de la cola (el último elemento agregado) sin eliminarlo.
+     * Devuelve el elemento final de la cola (el último elemento agregado) sin
+     * eliminarlo.
      * 
      * @return el elemento final de la cola.
      * @throws NoSuchElementException Si la cola está vacía.
      */
     public Item back() {
         if (isEmpty()) {
-            throw  new NoSuchElementException("La cola está vacía");
+            throw new NoSuchElementException("La cola está vacía");
         }
         return last.item;
     }
@@ -142,7 +147,8 @@ public class Queue<Item> implements Iterable<Item> {
     }
 
     /**
-     * Devuelve un iterador para recorrer los elementos de la cola en el orden de inserción.
+     * Devuelve un iterador para recorrer los elementos de la cola en el orden de
+     * inserción.
      * 
      * @return un iterador que permite recorrer la cola.
      */
@@ -156,36 +162,38 @@ public class Queue<Item> implements Iterable<Item> {
      */
     private class LLIterator implements Iterator<Item> {
 
-         /**
-     * Referencia al nodo actual en la iteración, comenzando por el primer nodo de la cola.
-     */
-    private Node current = first;
+        /**
+         * Referencia al nodo actual en la iteración, comenzando por el primer nodo de
+         * la cola.
+         */
+        private Node current = first;
 
-    /**
-     * Comprueba si hay un siguiente elemento en la iteración.
-     * 
-     * @return true si hay un elemento más en la cola, false en caso contrario.
-     */
-    @Override
-    public boolean hasNext() {
-        return current != null;
-    }
-
-    /**
-     * Devuelve el siguiente elemento en la iteración y avanza al siguiente nodo.
-     * 
-     * @return el siguiente elemento en la cola.
-     * @throws NoSuchElementException Si se llama al método `next()` cuando no hay más elementos en la cola.
-     */
-    @Override
-    public Item next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException("La cola está vacía");
+        /**
+         * Comprueba si hay un siguiente elemento en la iteración.
+         * 
+         * @return true si hay un elemento más en la cola, false en caso contrario.
+         */
+        @Override
+        public boolean hasNext() {
+            return current != null;
         }
-        Item item = current.item;
-        current = current.next;
-        return item;
-    
+
+        /**
+         * Devuelve el siguiente elemento en la iteración y avanza al siguiente nodo.
+         * 
+         * @return el siguiente elemento en la cola.
+         * @throws NoSuchElementException Si se llama al método `next()` cuando no hay
+         *                                más elementos en la cola.
+         */
+        @Override
+        public Item next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException("La cola está vacía");
+            }
+            Item item = current.item;
+            current = current.next;
+            return item;
+
+        }
     }
-}
 }

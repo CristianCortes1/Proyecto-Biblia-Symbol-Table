@@ -45,7 +45,6 @@ public class BibliaOrdenada {
         return palabrasOrdenadas.get(palabra);
     }
 
-
     /**
      * Devuelve el número total de palabras en el texto.
      *
@@ -117,7 +116,6 @@ public class BibliaOrdenada {
         return mayorFrecuencia;
     }
 
-
     /**
      * Devuelve la primera palabra en orden alfabético.
      *
@@ -145,7 +143,7 @@ public class BibliaOrdenada {
         String palabraValor = "";
         for (String palabra : palabrasOrdenadas.keys()) {
             palabraValor += palabra + "," + palabrasOrdenadas.get(palabra) + "\n";
-    }
+        }
         return palabraValor;
     }
 

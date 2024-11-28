@@ -15,7 +15,7 @@ import tdas.ST;
  */
 
 /**
- * Esta clase se encarga de gestionar la lectura de archivos de texto. 
+ * Esta clase se encarga de gestionar la lectura de archivos de texto.
  * En particular, proporciona un método para leer un archivo de texto específico
  * y extraer las palabras que contiene, almacenándolas en una cola.
  */

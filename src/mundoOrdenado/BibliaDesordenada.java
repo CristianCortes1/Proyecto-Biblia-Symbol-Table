@@ -11,10 +11,14 @@ import tdas.DisorderedST;
  */
 
 /**
- * Esta clase representa una Biblia que utiliza una estructura de datos desordenada
- * para almacenar palabras y sus frecuencias. Permite realizar diversas operaciones
- * como buscar palabras, contar palabras únicas y obtener la palabra con mayor frecuencia,
- * utiliza una tabla de símbolos desordenada (DisorderedST) para gestionar las palabras.
+ * Esta clase representa una Biblia que utiliza una estructura de datos
+ * desordenada
+ * para almacenar palabras y sus frecuencias. Permite realizar diversas
+ * operaciones
+ * como buscar palabras, contar palabras únicas y obtener la palabra con mayor
+ * frecuencia,
+ * utiliza una tabla de símbolos desordenada (DisorderedST) para gestionar las
+ * palabras.
  */
 public class BibliaDesordenada {
     /**
@@ -22,9 +26,9 @@ public class BibliaDesordenada {
      */
     private DisorderedST<String, Integer> palabrasDesordenadas;
 
-
     /**
-     * Constructor de la clase BibliaDesordenada. Inicializa las estructuras de datos
+     * Constructor de la clase BibliaDesordenada. Inicializa las estructuras de
+     * datos
      * y carga las palabras del archivo.
      * 
      * @throws IOException Si ocurre un error al leer las palabras del archivo.
@@ -36,9 +40,10 @@ public class BibliaDesordenada {
     /**
      * Llena la tabla de símbolos desordenada con las palabras del texto.
      * Calcula y almacena las frecuencias de cada palabra en la tabla de símbolos.
-          * @throws IOException 
-          */
-        public void llenarDisorderedST() throws IOException {
+     * 
+     * @throws IOException
+     */
+    public void llenarDisorderedST() throws IOException {
         GestorArchivos.obtenerPalabras(palabrasDesordenadas);
     }
 
@@ -132,7 +137,7 @@ public class BibliaDesordenada {
         String palabraValor = "";
         for (String palabra : palabrasDesordenadas.keys()) {
             palabraValor += palabra + "," + palabrasDesordenadas.get(palabra) + "\n";
-    }
+        }
         return palabraValor;
     }
 }
