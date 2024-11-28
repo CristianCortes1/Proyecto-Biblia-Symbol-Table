@@ -1,11 +1,11 @@
-package mundoOrdenado;
+package modelo.mundo;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-import tdas.ST;
+import modelo.tdas.ST;
 
 /**
  * @author Cristian Cortes

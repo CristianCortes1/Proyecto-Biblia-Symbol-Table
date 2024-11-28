@@ -1,7 +1,8 @@
-package mundoOrdenado;
+package modelo.mundo;
 
 import java.io.IOException;
-import tdas.OrderedST;
+
+import modelo.tdas.OrderedST;
 
 /**
  *

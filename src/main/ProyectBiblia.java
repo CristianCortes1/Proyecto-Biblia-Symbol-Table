@@ -3,6 +3,9 @@ package main;
 import java.io.IOException;
 import java.util.Scanner;
 
+import modelo.menus.menuTablaDesordenado;
+import modelo.menus.menuTablaOrdenada;
+
 /**
  * @author Cristian Cortes
  * @author David Chacon
@@ -12,9 +15,11 @@ import java.util.Scanner;
 
 /**
  * La clase {@code ProyectBiblia} es la clase principal del proyecto que permite
- * al usuario interactuar con una Biblia representada a través de dos tipos de tablas
+ * al usuario interactuar con una Biblia representada a través de dos tipos de
+ * tablas
  * de símbolos: una ordenada y una desordenada. A través de un menú interactivo,
- * el usuario puede elegir qué tipo de tabla utilizar y realizar diversas operaciones
+ * el usuario puede elegir qué tipo de tabla utilizar y realizar diversas
+ * operaciones
  * relacionadas con las palabras del texto.
  * 
  * La clase contiene un ciclo principal que presenta las opciones disponibles y
@@ -40,7 +45,8 @@ public class ProyectBiblia {
     private menuTablaOrdenada menuOrdenado;
 
     /**
-     * Constructor de la clase. Inicializa el {@code Scanner} y los objetos de los menús.
+     * Constructor de la clase. Inicializa el {@code Scanner} y los objetos de los
+     * menús.
      * 
      * @throws IOException Si ocurre un error al inicializar las tablas de símbolos.
      */
@@ -55,19 +61,23 @@ public class ProyectBiblia {
      * 
      * Muestra al usuario las opciones disponibles para elegir entre usar la
      * tabla de símbolos ordenada o desordenada. Según la elección del usuario,
-     * el programa invoca el menú correspondiente y permite realizar varias operaciones
+     * el programa invoca el menú correspondiente y permite realizar varias
+     * operaciones
      * relacionadas con las palabras en la Biblia.
      * 
      * @param args Los argumentos de línea de comandos (no utilizados en este caso).
      * @throws IOException Si ocurre un error al cargar las palabras de la Biblia.
      */
     public static void main(String[] args) throws IOException {
-
         ProyectBiblia main = new ProyectBiblia();
+        main.menuTerminal(main);
+        
+    }
+
+    public void menuTerminal(ProyectBiblia main) throws IOException {
         int opcion;
         while (true) {
             System.out.println("PROYECTO BIBLIA");
-
             System.out.println("¿Qué tabla de símbolos desea usar?"
                     + "\n1. Tabla de símbolos ordenada"
                     + "\n2. Tabla de símbolos desordenada"
@@ -85,7 +95,6 @@ public class ProyectBiblia {
                 }
                 default -> throw new AssertionError();
             }
-
         }
     }
 }

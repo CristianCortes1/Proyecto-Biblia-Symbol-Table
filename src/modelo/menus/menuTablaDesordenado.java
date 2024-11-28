@@ -1,8 +1,9 @@
-package main;
+package modelo.menus;
 
 import java.io.IOException;
 import java.util.Scanner;
-import mundoOrdenado.BibliaOrdenada;
+
+import modelo.mundo.BibliaDesordenada;
 
 /**
  * @author Cristian Cortes
@@ -14,25 +15,23 @@ import mundoOrdenado.BibliaOrdenada;
 /**
  * Esta clase implementa un menú interactivo para gestionar y consultar
  * estadísticas
- * de una Biblia organizada en una tabla ordenada. El menú permite al usuario
+ * de una Biblia organizada en una tabla desordenada. El menú permite al usuario
  * realizar
  * diversas operaciones, como obtener el número total de palabras, las palabras
  * únicas,
- * la frecuencia de palabras y el orden alfabético de las mismas, entre otras
- * opciones.
+ * la frecuencia de palabras, entre otras opciones.
  * 
- * El usuario puede interactuar con la Biblia ordenada a través de diversas
+ * El usuario puede interactuar con la Biblia desordenada a través de diversas
  * consultas,
- * como obtener la palabra con mayor frecuencia, mostrar el rango de una
- * palabra, o
- * listar las palabras ordenadas alfabéticamente.
+ * como obtener la palabra con mayor frecuencia, o mostrar la frecuencia de una
+ * palabra específica.
  */
-public class menuTablaOrdenada {
+public class menuTablaDesordenado {
 
     /**
-     * Objeto que representa la Biblia usando una tabla ordenada.
+     * Objeto que representa la Biblia usando una tabla desordenada.
      */
-    private BibliaOrdenada biblia;
+    private BibliaDesordenada biblia;
 
     /**
      * Objeto Scanner para la captura de entrada del usuario.
@@ -40,7 +39,7 @@ public class menuTablaOrdenada {
     private Scanner sc;
 
     /**
-     * Indica si la tabla ordenada ha sido llenada con los datos del texto.
+     * Indica si la tabla desordenada ha sido llenada con los datos del texto.
      */
     private boolean llenado = false;
 
@@ -52,8 +51,8 @@ public class menuTablaOrdenada {
      * @throws IOException Si ocurre un error al cargar las palabras desde el
      *                     archivo.
      */
-    public menuTablaOrdenada(Scanner sc) throws IOException {
-        biblia = new BibliaOrdenada();
+    public menuTablaDesordenado(Scanner sc) throws IOException {
+        biblia = new BibliaDesordenada();
         this.sc = sc;
     }
 
@@ -104,20 +103,6 @@ public class menuTablaOrdenada {
     }
 
     /**
-     * Muestra la última palabra en orden alfabético del texto.
-     */
-    public void mostrarUltimaPalabra() {
-        System.out.println("La última palabra es: " + biblia.ultimaPalabra());
-    }
-
-    /**
-     * Muestra la primera palabra en orden alfabético del texto.
-     */
-    public void mostrarPrimeraPalabra() {
-        System.out.println("La primera palabra es: " + biblia.primerPalabra());
-    }
-
-    /**
      * Muestra la frecuencia de cada palabra en el texto.
      */
     public void mostrarPalabraValor() {
@@ -125,15 +110,25 @@ public class menuTablaOrdenada {
     }
 
     /**
+     * Muestra todas las palabras almacenadas en la Biblia sin repeticiones.
+     * Utiliza la estructura de datos ordenada para obtener y mostrar las palabras
+     * únicas.
+     */
+    public void mostrarPalabrasSinRepetir() {
+        System.out.println("Las palabras sin repetir son: " + biblia.mostrarPalabrasSinRepetir());
+    }
+
+    /**
      * Muestra el menú de operaciones disponibles que el usuario puede elegir.
      * Incluye opciones para mostrar estadísticas y realizar búsquedas de palabras
-     * según diferentes criterios (frecuencia, rango, palabras alfabéticas, etc.).
+     * según diferentes criterios (frecuencia, palabras únicas, etc.).
      * 
      * @throws IOException
      */
-    public void conTablaOrdenada() throws IOException {
+    public void conTablaDesordenada() throws IOException {
+
         if (!llenado) {
-            biblia.llenarOrderedST();
+            biblia.llenarDisorderedST();
             llenado = true;
         }
         int opcion;
@@ -145,14 +140,10 @@ public class menuTablaOrdenada {
                     + "\n3. Mostrar la palabra con más frecuencia."
                     + "\n4. Mostrar la cantidad de palabras con menos frecuencia."
                     + "\n5. Mostrar la frecuencia de una palabra."
-                    + "\n6. Mostrar la primera palabra alfabéticamente."
-                    + "\n7. Mostrar la última palabra alfabéticamente."
-                    + "\n8. Mostrar la frecuencia de cada palabra."
-                    + "\n9. Mostrar el rango de una palabra."
-                    + "\n10. Mostrar la palabra en el rango n."
-                    + "\n11. Mostrar palabras de la biblia sin repetir."
-                    + "\n12. Volver."
-                    + "\n13. Salir.");
+                    + "\n6. Mostrar la frecuencia de cada palabra."
+                    + "\n7. Mostrar palabras de la biblia sin repetir."
+                    + "\n8. Volver."
+                    + "\n9. Salir.");
             opcion = sc.nextInt();
 
             switch (opcion) {
@@ -172,61 +163,21 @@ public class menuTablaOrdenada {
                     mostrarFrecuenciaDeUnaPalabra();
                 }
                 case 6 -> {
-                    mostrarPrimeraPalabra();
-                }
-                case 7 -> {
-                    mostrarUltimaPalabra();
-                }
-                case 8 -> {
                     mostrarPalabraValor();
                 }
-                case 9 -> {
-                    mostrarRango();
-                }
-                case 10 -> {
-                    mostrarPalabraRangoN();
-                }
-                case 11 -> {
+                case 7 -> {
                     mostrarPalabrasSinRepetir();
                 }
-                case 12 -> {
+                case 8 -> {
                     volver = true;
                 }
-                case 13 -> {
+                case 9 -> {
                     System.exit(0);
-
                 }
                 default -> {
                     System.out.println("Opcion invalida");
                 }
             }
         }
-    }
-
-    /**
-     * Muestra todas las palabras almacenadas en la Biblia sin repeticiones.
-     * Utiliza la estructura de datos ordenada para obtener y mostrar las palabras únicas.
-     */
-    public void mostrarPalabrasSinRepetir() {
-        System.out.println("Las palabras sin repetir son: " + biblia.mostrarPalabrasSinRepetir());
-    }
-
-    /**
-     * Solicita al usuario una palabra y muestra su rango en la tabla ordenada.
-     */
-    public void mostrarRango() {
-        System.out.println("Escriba la palabra que quiere mostrar el rango: ");
-        String palabra = sc.next();
-        System.out.println("El rango de la palabra " + palabra + " es " + biblia.rangoPalabra(palabra));
-    }
-
-    /**
-     * Solicita al usuario un número de rango y muestra la palabra correspondiente
-     * a ese rango en el texto ordenado alfabéticamente.
-     */
-    public void mostrarPalabraRangoN() {
-        System.out.println("Escriba el rango de la palabra:");
-        int n = sc.nextInt();
-        System.out.println("La palabra de rango N es: " + biblia.palabraDeRangoN(n));
     }
 }

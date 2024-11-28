@@ -1,4 +1,4 @@
-package tdas;
+package modelo.tdas;
 
 /**
  * @author Cristian Cortes

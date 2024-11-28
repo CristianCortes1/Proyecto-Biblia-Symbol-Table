@@ -4,4 +4,4 @@
  * Este paquete proporciona funcionalidades para contar las palabras, determinar su frecuencia,
  * buscar palabras específicas y obtener información sobre las palabras ordenadas alfabéticamente.
  */
-package mundoOrdenado;
+package modelo.mundo;

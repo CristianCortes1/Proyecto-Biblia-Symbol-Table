@@ -4,4 +4,4 @@
  * Estas estructuras están diseñadas para soportar operaciones como inserciones, eliminaciones, búsquedas 
  * y ordenación de elementos, proporcionando una base sólida para resolver problemas algorítmicos complejos.
  */
-package tdas;
+package modelo.tdas;
