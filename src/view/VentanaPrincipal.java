@@ -118,12 +118,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.setContentPane(panelPrincipal);
     }
 
+    public JPanel getPanelTablaNoOrdenada() {
+        return panelTablaNoOrdenada;
+    }
+
     public void generarPanelTablaNoOrdenada() {
 
         panelTablaNoOrdenada.add(volver);
         textArea.setEditable(false);
-        textArea.setAutoscrolls(true);
-        textArea.getScrollableBlockIncrement(new java.awt.Rectangle(0, 0, 0, 0), 1, 1);
         panelTablaNoOrdenada.add(textArea);
         this.setContentPane(panelTablaNoOrdenada);
     }

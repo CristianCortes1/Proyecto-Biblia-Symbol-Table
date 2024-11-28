@@ -80,18 +80,25 @@ public class Controler implements ActionListener {
                             + bibliaNoOrdenada.palabrasTotales());
                     break;
                 case "Mostrar palabras únicas":
-                    ventana.getTextArea().setText("Palabras únicas: "
-                                                + bibliaNoOrdenada.palabrasUnicas());
-                    // JTextArea textArea = ventana.getTextArea();
-                    // textArea.setText("Palabras únicas: " + bibliaNoOrdenada.palabrasUnicas());
-                    // textArea.setPreferredSize(new Dimension(400, 300));
-                    // textArea.setEditable(false);
+                    
+                    if (bibliaNoOrdenada != null) {
+                        String palabrasUnicas = bibliaNoOrdenada.palabrasUnicas();
+                        if (palabrasUnicas != null) {
+                            JTextArea textArea = new JTextArea(palabrasUnicas.split("\n").length,10);
+                            textArea.setPreferredSize(new Dimension(400, 300));
+                            textArea.setEditable(false);
+                            textArea.setLineWrap(true);
+                            textArea.setWrapStyleWord(true);
+                            textArea.setText("Palabras únicas: " + palabrasUnicas);
 
-                    // // Crear un JScrollPane y añadir el JTextArea a él
-                    // JScrollPane scrollPane = new JScrollPane();
-                    // scrollPane.setViewportView(textArea);
-                    // ventana.getPanelTablaNoOrdenada().add(scrollPane);
-                    // ventana.revalidate();
+                            JScrollPane scrollPane = new JScrollPane(textArea);
+                            scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+                            scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+                            scrollPane.setPreferredSize(new Dimension(400, 300));
+                            ventana.add(scrollPane);
+                            ventana.revalidate();
+                        }
+                    }
                     break;
                 case "Mostrar la palabra con más frecuencia":
                     ventana.getTextArea().setText("Palabra con mayor frecuencia: "
