@@ -167,4 +167,18 @@ public class BibliaOrdenada {
         return palabrasOrdenadas.rank(palabra);
     }
 
+    /**
+     * Devuelve un String con todas las palabras almacenadas sin repetir.
+     *
+     * @return Un String con todas las palabras en la estructura de datos.
+     */
+    public String mostrarPalabrasSinRepetir() {
+        String palabras = "";
+        for (String palabra : palabrasOrdenadas.keys()) {
+            palabras += palabra + "\n";
+
+        }
+        return palabras;
+    }
+
 }

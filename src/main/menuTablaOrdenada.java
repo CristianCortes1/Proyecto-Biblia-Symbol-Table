@@ -150,8 +150,9 @@ public class menuTablaOrdenada {
                     + "\n8. Mostrar la frecuencia de cada palabra."
                     + "\n9. Mostrar el rango de una palabra."
                     + "\n10. Mostrar la palabra en el rango n."
-                    + "\n11. Volver."
-                    + "\n12. Salir.");
+                    + "\n11. Mostrar palabras de la biblia sin repetir."
+                    + "\n12. Volver."
+                    + "\n13. Salir.");
             opcion = sc.nextInt();
 
             switch (opcion) {
@@ -186,16 +187,28 @@ public class menuTablaOrdenada {
                     mostrarPalabraRangoN();
                 }
                 case 11 -> {
-                    volver = true;
+                    mostrarPalabrasSinRepetir();
                 }
                 case 12 -> {
+                    volver = true;
+                }
+                case 13 -> {
                     System.exit(0);
+
                 }
                 default -> {
                     System.out.println("Opcion invalida");
                 }
             }
         }
+    }
+
+    /**
+     * Muestra todas las palabras almacenadas en la Biblia sin repeticiones.
+     * Utiliza la estructura de datos ordenada para obtener y mostrar las palabras únicas.
+     */
+    public void mostrarPalabrasSinRepetir() {
+        System.out.println("Las palabras sin repetir son: " + biblia.mostrarPalabrasSinRepetir());
     }
 
     /**

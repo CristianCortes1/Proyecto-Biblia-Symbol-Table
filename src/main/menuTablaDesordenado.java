@@ -109,6 +109,15 @@ public class menuTablaDesordenado {
     }
 
     /**
+     * Muestra todas las palabras almacenadas en la Biblia sin repeticiones.
+     * Utiliza la estructura de datos ordenada para obtener y mostrar las palabras
+     * únicas.
+     */
+    public void mostrarPalabrasSinRepetir() {
+        System.out.println("Las palabras sin repetir son: " + biblia.mostrarPalabrasSinRepetir());
+    }
+
+    /**
      * Muestra el menú de operaciones disponibles que el usuario puede elegir.
      * Incluye opciones para mostrar estadísticas y realizar búsquedas de palabras
      * según diferentes criterios (frecuencia, palabras únicas, etc.).
@@ -131,8 +140,9 @@ public class menuTablaDesordenado {
                     + "\n4. Mostrar la cantidad de palabras con menos frecuencia."
                     + "\n5. Mostrar la frecuencia de una palabra."
                     + "\n6. Mostrar la frecuencia de cada palabra."
-                    + "\n7. Volver."
-                    + "\n8. Salir.");
+                    + "\n7. Mostrar palabras de la biblia sin repetir."
+                    + "\n8. Volver."
+                    + "\n9. Salir.");
             opcion = sc.nextInt();
 
             switch (opcion) {
@@ -155,9 +165,12 @@ public class menuTablaDesordenado {
                     mostrarPalabraValor();
                 }
                 case 7 -> {
-                    volver = true;
+                    mostrarPalabrasSinRepetir();
                 }
                 case 8 -> {
+                    volver = true;
+                }
+                case 9 -> {
                     System.exit(0);
                 }
                 default -> {
