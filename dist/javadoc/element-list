@@ -1,3 +1,5 @@
+controller
 main
-mundoOrdenado
-tdas
+modelo.mundo
+modelo.tdas
+view
