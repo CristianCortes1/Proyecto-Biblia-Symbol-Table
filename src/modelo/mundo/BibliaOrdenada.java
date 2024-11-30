@@ -32,9 +32,17 @@ public class BibliaOrdenada {
         palabrasOrdenadas = new OrderedST<>();
     }
 
+    
+    /**
+     * Llena la tabla de símbolos ordenada con las palabras del texto.
+     * Calcula y almacena las frecuencias de cada palabra en la tabla de símbolos.
+     * 
+     * @throws IOException
+     */
     public void llenarOrderedST() throws IOException {
         GestorArchivos.obtenerPalabras(palabrasOrdenadas);
     }
+
 
     /**
      * Busca la frecuencia de una palabra en el texto.
