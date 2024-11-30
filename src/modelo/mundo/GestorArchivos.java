@@ -17,12 +17,12 @@ import modelo.tdas.ST;
 /**
  * Esta clase se encarga de gestionar la lectura de archivos de texto.
  * En particular, proporciona un método para leer un archivo de texto específico
- * y extraer las palabras que contiene, almacenándolas en una cola.
+ * y extraer las palabras que contiene, almacenándolas en una ST.
  */
 public class GestorArchivos {
 
     /**
-     * Lee las palabras de un archivo de texto y las almacena en una cola.
+     * Lee las palabras de un archivo de texto y las almacena en una ST.
      *
      * @throws IOException Si ocurre un error al leer el archivo.
      */

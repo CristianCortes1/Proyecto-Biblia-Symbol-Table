@@ -142,11 +142,11 @@ public class BibliaNoOrdenada {
         return palabraValor;
     }
 
-/**
- * Devuelve un String con todas las palabras almacenadas sin repetir.
- *
- * @return Un String con todas las palabras en la estructura de datos.
- */
+    /**
+     * Devuelve un String con todas las palabras almacenadas sin repetir.
+     *
+     * @return Un String con todas las palabras en la estructura de datos.
+     */
     public String mostrarPalabrasSinRepetir() {
         String palabras = "";
         for (String palabra : palabrasDesordenadas.keys()) {
