@@ -50,8 +50,7 @@ public class ProyectBiblia {
         BibliaNoOrdenada bibliaNoOrdenada = new BibliaNoOrdenada();
         BibliaOrdenada bibliaOrdenada = new BibliaOrdenada();
         
-        // Set up the controller with the main window and Bible instances
-        Controller controler = new Controller(ventanaPrincipal, bibliaNoOrdenada, bibliaOrdenada);
+        new Controller(ventanaPrincipal, bibliaNoOrdenada, bibliaOrdenada);
     }
 
 }
