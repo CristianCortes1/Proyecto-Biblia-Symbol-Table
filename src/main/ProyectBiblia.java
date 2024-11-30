@@ -75,6 +75,7 @@ public class ProyectBiblia {
         VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
         BibliaNoOrdenada bibliaNoOrdenada = new BibliaNoOrdenada();
         BibliaOrdenada bibliaOrdenada = new BibliaOrdenada();
+        @SuppressWarnings("unused")
         Controler controler = new Controler(ventanaPrincipal, bibliaNoOrdenada, bibliaOrdenada);
         ProyectBiblia main = new ProyectBiblia();
         main.menuTerminal(main);

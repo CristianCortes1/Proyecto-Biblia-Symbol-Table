@@ -2,20 +2,14 @@ package view;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.JTextPane;
-
-import java.awt.event.ActionListener;
-
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Color;
-
 
 public class VentanaPrincipal extends javax.swing.JFrame {
 
@@ -33,7 +27,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private JComboBox<String> opcionesNoOrdenada = new JComboBox<>();
     private JButton confitmarOrdenada = new JButton("Confirmar");
 
-    private JTextArea textArea = new JTextArea();
+    private JTextArea textArea = new JTextArea(10, 20);
+    private JScrollPane scrollPane = new JScrollPane(textArea);
+    private JButton confirmarPalabra = new JButton("Confirmar palabra");
 
     /**
      * Constructor for VentanaPrincipal.
@@ -105,8 +101,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         panelTablaOrdenada.add(confitmarOrdenada);
 
+        textArea.setEditable(false);
+        textArea.setPreferredSize(new java.awt.Dimension(400, 300));
+
+        scrollPane.setViewportView(textArea);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setPreferredSize(new java.awt.Dimension(400, 300));
+
+        confirmarPalabra.setPreferredSize(new java.awt.Dimension(400, 40));
+        confirmarPalabra.setFont(new Font("Arial", Font.BOLD, 20));
+        confirmarPalabra.setVisible(false);
+
         this.setTitle("Proyecto Biblia");
-        this.setSize(600, 400);
+        this.setSize(600, 450);
         this.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
@@ -114,31 +122,34 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     public void generarPanelPrincipal() {
-
         this.setContentPane(panelPrincipal);
+    }
+
+    public void generarPanelTablaNoOrdenada() {
+        panelTablaNoOrdenada.add(volver);
+        panelTablaNoOrdenada.add(scrollPane);
+        panelTablaNoOrdenada.add(confirmarPalabra);
+        this.setContentPane(panelTablaNoOrdenada);
+    }
+
+    public void generarPanelTablaOrdenada() {
+        panelTablaOrdenada.add(volver);
+        panelTablaOrdenada.add(scrollPane);
+        panelTablaOrdenada.add(confirmarPalabra);
+        this.setContentPane(panelTablaOrdenada);
     }
 
     public JPanel getPanelTablaNoOrdenada() {
         return panelTablaNoOrdenada;
     }
 
-    public void generarPanelTablaNoOrdenada() {
-
-        panelTablaNoOrdenada.add(volver);
-        textArea.setEditable(false);
-        panelTablaNoOrdenada.add(textArea);
-        this.setContentPane(panelTablaNoOrdenada);
+    public JPanel getPanelTablaOrdenada() {
+        return panelTablaOrdenada;
     }
 
-    public void generarPanelTablaOrdenada() {
-
-        panelTablaOrdenada.add(volver);
-        // textArea.setPreferredSize(new java.awt.Dimension(400, 300));
-        textArea.setEditable(false);
-        panelTablaOrdenada.add(textArea);
-        this.setContentPane(panelTablaOrdenada);
+    public JButton getConfirmarPalabra(){
+        return confirmarPalabra;
     }
-
     /**
      * Returns the main panel of the window, which contains the components.
      * 
@@ -165,12 +176,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         return opcionesNoOrdenada;
     }
 
+    public JScrollPane getScrollPane() {
+        return scrollPane;
+    }
+
     public JComboBox<String> getOpcionesOrdenada() {
         return opcionesOrdenada;
     }
 
     public JTextArea getTextArea() {
         return textArea;
+    }
+
+    public JTextArea setTextArea(JTextArea textArea) {
+        return this.textArea = textArea;
     }
 
     public JButton getConfitmarNoOrdenada() {
